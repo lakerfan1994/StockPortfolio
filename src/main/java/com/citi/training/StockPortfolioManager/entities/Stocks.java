@@ -11,14 +11,14 @@ public class Stocks implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
 
-    @Column(name="Ticker")
+    @Column(name="ticker")
     private String ticker;
 
-    @Column(name="Date")
+    @Column(name="date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
-    @Column(name="Amount")
+    @Column(name="amount")
     private float amount;
 
     //default constructor
