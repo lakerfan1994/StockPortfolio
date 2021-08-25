@@ -17,8 +17,8 @@ pipeline {
         sh "oc login https://namdevops14.conygre.com:8443 --username admin --password admin --insecure-skip-tls-verify=true"
         sh "oc project portfoliomanager || oc new-project portfoliomanager"
         sh "oc delete all --selector app=portfoliomanager || echo 'Unable to delete all previous openshift resources'"
-        sh "oc new-app portfoliomanager-l version=latest"
-        sh "oc expose svc/portfoliomanager"
+        sh "oc new-app https://github.com/lakerfan1994/StockPortfolio.git
+        sh "oc expose svc/stockportfolio"
       }
     }
   }
