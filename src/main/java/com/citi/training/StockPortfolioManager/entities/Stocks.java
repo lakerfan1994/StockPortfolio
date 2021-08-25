@@ -14,7 +14,7 @@ public class Stocks implements Serializable {
     @Column(name="ticker")
     private String ticker;
 
-    @Column(name="date")
+    @Column(name="purchased_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
