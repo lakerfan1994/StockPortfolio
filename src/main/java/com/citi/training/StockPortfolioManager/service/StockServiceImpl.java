@@ -31,54 +31,54 @@ public class StockServiceImpl implements StockService {
     @Override
     public void sellStock(int transaction) {stockRepository.deleteById(transaction);}
 
-    @Override
-    public Collection<Stocks> findTop5Gainers()
-    {
-        ArrayList<Stocks> temp = new ArrayList<>(stockRepository.findAll());
+//    @Override
+//    public Collection<Stocks> findTop5Gainers()
+//    {
+//        ArrayList<Stocks> temp = new ArrayList<>(stockRepository.findAll());
+//
+//        // Sorting is done in-place with Stocks objects in ascending order based on price
+//        Collections.sort(temp, new SortByPrice());
+//
+//        // Reverse sorting is done in-place to make Stocks objects in descending order
+//        Collections.sort(temp, Collections.reverseOrder());
+//
+//        ArrayList<Stocks> topFive = new ArrayList<Stocks>();
+//
+//        int i = 1;
+//
+//        for (Stocks s : temp)
+//        {
+//            if (i != 5)
+//            {
+//                topFive.add(s);
+//                i++;
+//            }
+//        }
+//
+//        return topFive;
+//    }
 
-        // Sorting is done in-place with Stocks objects in ascending order based on price
-        Collections.sort(temp, new SortByPrice());
-
-        // Reverse sorting is done in-place to make Stocks objects in descending order
-        Collections.sort(temp, Collections.reverseOrder());
-
-        ArrayList<Stocks> topFive = new ArrayList<Stocks>();
-
-        int i = 1;
-
-        for (Stocks s : temp)
-        {
-            if (i != 5)
-            {
-                topFive.add(s);
-                i++;
-            }
-        }
-
-        return topFive;
-    }
-
-    @Override
-    public Collection<Stocks> findTop5Losers()
-    {
-        ArrayList<Stocks> temp = new ArrayList<>(stockRepository.findAll());
-
-        // Sorting is done in-place with Stocks objects in ascending order based on price
-        Collections.sort(temp, new SortByPrice());
-
-        ArrayList<Stocks> bottomFive = new ArrayList<Stocks>();
-
-        int i = 1;
-
-        for (Stocks s : temp)
-        {
-            if (i != 5)
-            {
-                bottomFive.add(s);
-                i++;
-            }
-        }
-
-        return bottomFive;
-    }
+//    @Override
+//    public Collection<Stocks> findTop5Losers()
+//    {
+//        ArrayList<Stocks> temp = new ArrayList<>(stockRepository.findAll());
+//
+//        // Sorting is done in-place with Stocks objects in ascending order based on price
+//        Collections.sort(temp, new SortByPrice());
+//
+//        ArrayList<Stocks> bottomFive = new ArrayList<Stocks>();
+//
+//        int i = 1;
+//
+//        for (Stocks s : temp)
+//        {
+//            if (i != 5)
+//            {
+//                bottomFive.add(s);
+//                i++;
+//            }
+//        }
+//
+//        return bottomFive;
+//    }
 }

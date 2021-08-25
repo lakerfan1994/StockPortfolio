@@ -10,8 +10,6 @@ public class Stocks implements Serializable {
     //attributes
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="Transaction")
-    private int transaction;
 
     @Column(name="Ticker")
     private String ticker;
@@ -19,9 +17,6 @@ public class Stocks implements Serializable {
     @Column(name="Date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
-
-    @Column(name="Price")
-    private float price;
 
     @Column(name="Amount")
     private float amount;
@@ -31,21 +26,12 @@ public class Stocks implements Serializable {
 
     }
 
-    public Stocks(int transaction, String ticker, Date date, float price, float amount) {
-        this.transaction = transaction;
+    public Stocks( String ticker, Date date,  float amount) {
         this.ticker = ticker;
         this.date = date;
-        this.price = price;
         this.amount = amount;
     }
 
-    public int getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(int transaction) {
-        this.transaction = transaction;
-    }
 
     public String getTicker() {
         return ticker;
@@ -63,13 +49,13 @@ public class Stocks implements Serializable {
         this.date = date;
     }
 
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
+//    public float getPrice() {
+////        return price;
+////    }
+//
+//    public void setPrice(float price) {
+//        this.price = price;
+//    }
 
     public float getAmount() {
         return amount;

@@ -9,6 +9,6 @@ public interface StockService {
     Stocks addTransaction(Stocks stock);
     // This is delete. Assume we are selling stock by transaction # for now.
     void sellStock(int transaction);
-    Collection<Stocks> findTop5Gainers();
-    Collection<Stocks> findTop5Losers();
+//    Collection<Stocks> findTop5Gainers();
+//    Collection<Stocks> findTop5Losers();
 }

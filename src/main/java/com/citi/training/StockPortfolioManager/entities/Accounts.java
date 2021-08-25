@@ -2,6 +2,7 @@ package com.citi.training.StockPortfolioManager.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Table(name="accounts")
@@ -9,8 +10,8 @@ public class Accounts implements Serializable {
     // attributes
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="AccountNumber")
-    private int accountNumber;
+    @Column(name="Date")
+    private Date date;
 
     @Column(name="Bank")
     private String bank;
@@ -32,12 +33,12 @@ public class Accounts implements Serializable {
         this.balance = balance;
     }
 
-    public int getAccountNumber() {
-        return accountNumber;
+    public Date getDate() {
+        return this.date;
     }
 
-    public void setAccountNumber(int accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setAccountNumber(Date date) {
+        this.date = date;
     }
 
     public String getBank() {
