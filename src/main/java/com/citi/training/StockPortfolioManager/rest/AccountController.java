@@ -13,7 +13,9 @@ public class AccountController {
     private AccountService as;
 
     // get list of all accounts
+
     @RequestMapping("/getAccounts")
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     public Collection<Accounts> getAllAccounts() {
         return as.getAllAccounts();
