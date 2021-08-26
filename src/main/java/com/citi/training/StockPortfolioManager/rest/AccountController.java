@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
-
+@CrossOrigin
 @RestController
 public class AccountController {
     @Autowired
@@ -15,10 +15,16 @@ public class AccountController {
     // get list of all accounts
 
     @RequestMapping("/getAccounts")
-    @CrossOrigin(origins = "http://localhost:4200")
+//    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     public Collection<Accounts> getAllAccounts() {
+        Collection<Accounts> testAcc = as.getAllAccounts();
+        for(Accounts acc: testAcc){
+            System.out.println(acc.getBank());
+        }
+//        System.out.println(as.getAllAccounts());
         return as.getAllAccounts();
+
     }
 
     // get an account

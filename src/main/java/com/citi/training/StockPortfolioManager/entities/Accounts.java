@@ -10,6 +10,10 @@ public class Accounts implements Serializable {
     // attributes
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+
+    @Column(name="Id")
+    private int id;
+
     @Column(name="Date")
     private Date date;
 
@@ -27,17 +31,27 @@ public class Accounts implements Serializable {
 
     }
 
-    public Accounts(String bank, String type, float balance) {
+    public Accounts(int id, Date date, String bank, String type, float balance) {
+        this.id = id;
+        this.date = date;
         this.bank = bank;
         this.type = type;
         this.balance = balance;
     }
 
-    public Date getDate() {
-        return this.date;
+    public int getId() {
+        return id;
     }
 
-    public void setAccountNumber(Date date) {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
         this.date = date;
     }
 
